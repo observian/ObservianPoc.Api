@@ -1,4 +1,4 @@
-name: Publish Nuget package
+name: Publish Nuget Client Package
 on: [push]
 jobs:
   build:
