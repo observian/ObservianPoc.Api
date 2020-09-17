@@ -18,8 +18,6 @@ jobs:
 
       - name: Dotnet Pack
         run: |
-#          version=`date +"%Y.%m%d.%H%M"`
-#          sed -i "s/1.0.0/${version}/g" ./ObservianPoc.Business/ObservianPoc.Business.csproj
           dotnet pack -c Release -o . ./ObservianPoc.Business/ObservianPoc.Business.csproj       
 
       - name: Package Source
