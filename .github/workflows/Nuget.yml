@@ -16,14 +16,18 @@ jobs:
         run: |
           dotnet build -c Release
 
-      - name: Package Source
+      - name: SED Nuget Config
         run: |
-          dotnet nuget add source ${{ secrets.PACKAGE_SOURCE }} -n github -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
+          sed -i -e "s/ACTOR/${{ github.actor }}/g" -e "s/APIKEY/${{ secrets.GITHUB_TOKEN }}/g" nuget.config
           
       - name: Dotnet Pack
         run: |
           dotnet pack -c Release -o . ./ObservianPoc.Business/ObservianPoc.Business.csproj       
 
+#      - name: Package Source
+#        run: |
+#          dotnet nuget add source ${{ secrets.PACKAGE_SOURCE }} -n github -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text
+
       - name: Push to GitHub
         run: |
-          dotnet nuget push *.nupkg -s "github" -k ${{ secrets.GITHUB_TOKEN }} --skip-duplicate --no-symbols true
+          dotnet nuget push *.nupkg -s "Observian" -k ${{ secrets.GITHUB_TOKEN }} --skip-duplicate --no-symbols true
