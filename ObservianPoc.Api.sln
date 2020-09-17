@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservianPoc.Api", "Observi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservianPoc.Business", "ObservianPoc.Business\ObservianPoc.Business.csproj", "{ED570A5F-AB5C-44DE-AC39-6AF22E0A75BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservianPoc.Client", "ObservianPoc.Client\ObservianPoc.Client.csproj", "{7E785382-DD26-4A9B-8561-7A0F994EB97E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{ED570A5F-AB5C-44DE-AC39-6AF22E0A75BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED570A5F-AB5C-44DE-AC39-6AF22E0A75BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED570A5F-AB5C-44DE-AC39-6AF22E0A75BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E785382-DD26-4A9B-8561-7A0F994EB97E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E785382-DD26-4A9B-8561-7A0F994EB97E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E785382-DD26-4A9B-8561-7A0F994EB97E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E785382-DD26-4A9B-8561-7A0F994EB97E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -1,0 +1,29 @@
+name: Publish Nuget package
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core Version 3.1
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: 3.1.301
+
+      - name: SED Nuget Config
+        run: |
+          sed -i -e "s/ACTOR/${{ github.actor }}/g" -e "s/APIKEY/${{ secrets.GITHUB_TOKEN }}/g" nuget.config
+
+      - name: Build Project
+          run: |
+            dotnet build -c Release
+
+      - name: Dotnet Pack
+        run: |
+          dotnet pack -c Release -o . ./ObservianPoc.Client/ObservianPoc.Client.csproj       
+
+      - name: Push to GitHub
+        run: |
+          dotnet nuget push *.nupkg -s "Observian" -k ${{ secrets.GITHUB_TOKEN }} --skip-duplicate --no-symbols true
