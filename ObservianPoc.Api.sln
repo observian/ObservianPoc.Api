@@ -3,6 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservianPoc.Api", "ObservianPoc.Api\ObservianPoc.Api.csproj", "{0AB83683-2F6D-4AD2-943C-BA94C4722F54}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{FD5DDC89-E063-4D3A-90A7-769FE4F96904}"
+ProjectSection(SolutionItems) = preProject
+	.github\workflows\nuget.yml = .github\workflows\nuget.yml
+EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Container", "Container", "{B638C979-77FF-44DE-B945-3F4D8C7A7156}"
 ProjectSection(SolutionItems) = preProject
