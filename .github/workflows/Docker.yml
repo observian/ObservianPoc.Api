@@ -1,7 +1,5 @@
 name: Build and Deploy to Docker
-on:
-  push:
-    branches: [master]
+on: push
 jobs:
   setup-build-publish-deploy:
     name: Build - Tag - Deploy

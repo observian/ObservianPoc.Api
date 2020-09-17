@@ -7,6 +7,7 @@ WORKDIR /build
 COPY ./nuget.config ./
 
 COPY ./ObservianPoc.Api/ObservianPoc.Api.csproj ./ObservianPoc.Api/ObservianPoc.Api.csproj
+COPY ./ObservianPoc.Business/ObservianPoc.Business.csproj ./ObservianPoc.Business/ObservianPoc.Business.csproj
 COPY ObservianPoc.Api.sln .
 
 RUN sed -i -e "s/ACTOR/$NUGET_USERNAME/g" -e "s/APIKEY/$NUGET_API_KEY/g" nuget.config
