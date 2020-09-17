@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using ObservianPoc.Models.ApiModels;
@@ -8,6 +9,7 @@ using ObservianPoc.Models.ApiModels;
 namespace ObservianPoc.Api.Controllers
 {
     [ApiController]
+    [EnableCors("all")]
     [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
