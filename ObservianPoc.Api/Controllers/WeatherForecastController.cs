@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using ObservianPoc.Common.ApiModels;
 
 namespace ObservianPoc.Api.Controllers
 {
@@ -26,6 +27,13 @@ namespace ObservianPoc.Api.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            var model = new ExampleModel
+            {
+                Property1 = "Hi",
+                Property2 = "Hello",
+                Property3 = "Hola"
+            };
+            
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

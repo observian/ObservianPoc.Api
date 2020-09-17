@@ -9,7 +9,6 @@ COPY ./nuget.config ./
 COPY ./ObservianPoc.Api/ObservianPoc.Api.csproj ./ObservianPoc.Api/ObservianPoc.Api.csproj
 COPY ObservianPoc.Api.sln .
 
-RUN echo $NUGET_USERNAME
 RUN sed -i -e "s/ACTOR/$NUGET_USERNAME/g" -e "s/APIKEY/$NUGET_API_KEY/g" nuget.config
 
 RUN dotnet restore ObservianPoc.Api.sln
