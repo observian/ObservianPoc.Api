@@ -45,6 +45,8 @@ namespace ObservianPoc.Api
             // app.UseHttpsRedirection();
 
             app.UseRouting();
+            
+            app.UseCors("all");
 
             app.UseAuthorization();
 

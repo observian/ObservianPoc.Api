@@ -28,13 +28,6 @@ namespace ObservianPoc.Api.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
-            var model = new ExampleModel
-            {
-                Property1 = "Hi",
-                Property2 = "Hello",
-                Property3 = "Hola"
-            };
-            
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
@@ -43,6 +36,20 @@ namespace ObservianPoc.Api.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+        
+        [HttpGet]
+        [Route("Model")]
+        public ExampleModel GetModel()
+        {
+            var model = new ExampleModel
+            {
+                Property1 = "Hi",
+                Property2 = "Hello",
+                Property3 = "Hola"
+            };
+
+            return model;
         }
     }
 }
