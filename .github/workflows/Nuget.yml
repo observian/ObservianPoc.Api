@@ -12,13 +12,13 @@ jobs:
         with:
           dotnet-version: 3.1.301
 
-      - name: Build Project
-        run: |
-          dotnet build -c Release
-
       - name: SED Nuget Config
         run: |
           sed -i -e "s/ACTOR/${{ github.actor }}/g" -e "s/APIKEY/${{ secrets.GITHUB_TOKEN }}/g" nuget.config
+
+      - name: Build Project
+            run: |
+              dotnet build -c Release
           
       - name: Dotnet Pack
         run: |
