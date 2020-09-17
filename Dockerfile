@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 as build
-ARG GITHUB_ACTOR
-ARG GITHUB_TOKEN
+ARG NUGET_USERNAME
+ARG NUGET_API_KEY
 
 WORKDIR /build
 
@@ -9,7 +9,8 @@ COPY ./nuget.config ./
 COPY ./ObservianPoc.Api/ObservianPoc.Api.csproj ./ObservianPoc.Api/ObservianPoc.Api.csproj
 COPY ObservianPoc.Api.sln .
 
-RUN sed -i -e "s/ACTOR/$GITHUB_ACTOR/g" -e "s/APIKEY/$GITHUB_TOKEN/g" nuget.config
+RUN echo $NUGET_USERNAME
+RUN sed -i -e "s/ACTOR/$NUGET_USERNAME/g" -e "s/APIKEY/$NUGET_API_KEY/g" nuget.config
 
 RUN dotnet restore ObservianPoc.Api.sln
 

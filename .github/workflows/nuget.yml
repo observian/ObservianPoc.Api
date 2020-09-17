@@ -4,7 +4,7 @@ on:
     branches: [master]
 jobs:
   setup-build-publish-deploy:
-    name: Setup, Build, Publish, and Deploy
+    name: Build - Tag - Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -20,6 +20,6 @@ jobs:
           repository: observian/observianpoc.api/observian-poc-api
           tag_with_ref: true
           tag_with_sha: true
-          build-arg: GITHUB_ACTOR=${{ github.actor }},GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
-#         build_args: NUGET_USERNAME=${{ github.actor }},NUGET_API_KEY=${{ secrets.PACKAGE_SERVICE_ACCOUNT_TOKEN }}
+#         build-arg: GITHUB_ACTOR=${{ github.actor }},GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }} \
+          build_args: NUGET_USERNAME=${{ github.actor }},NUGET_API_KEY=${{ secrets.GITHUB_TOKEN }}
 
