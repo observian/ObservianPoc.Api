@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObservianPoc.Api", "ObservianPoc.Api\ObservianPoc.Api.csproj", "{0AB83683-2F6D-4AD2-943C-BA94C4722F54}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Actions", "Actions", "{FD5DDC89-E063-4D3A-90A7-769FE4F96904}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Container", "Container", "{B638C979-77FF-44DE-B945-3F4D8C7A7156}"
+ProjectSection(SolutionItems) = preProject
+	Dockerfile = Dockerfile
+	nuget.config = nuget.config
+	.github\workflow\nuget.yml = .github\workflow\nuget.yml
+EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0AB83683-2F6D-4AD2-943C-BA94C4722F54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AB83683-2F6D-4AD2-943C-BA94C4722F54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AB83683-2F6D-4AD2-943C-BA94C4722F54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AB83683-2F6D-4AD2-943C-BA94C4722F54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
